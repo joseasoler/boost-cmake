@@ -22,7 +22,7 @@ option(BOOST_LOCALE_ENABLE_WINAPI_BACKEND "Enable Winapi backend in Boost Locale
 option(BOOST_LOCALE_ENABLE_STD_BACKEND "Enable STD backend in Boost Locale if available" ON)
 option(BOOST_LOCALE_ENABLE_POSIX_BACKEND "Enable Posix backend in Boost Locale if available" ${BOOST_LOCALE_ENABLE_POSIX_BACKEND_DEFAULT})
 
-if(BOOST_LOCALE_ENABLE_ICU_BACKEND)
+if(NOT ICU_FOUND AND BOOST_LOCALE_ENABLE_ICU_BACKEND)
   find_package(ICU COMPONENTS uc dt i18n)
 endif()
 
